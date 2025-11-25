@@ -1,0 +1,67 @@
+﻿2025-11-25T14:09:45.5542698Z ##[group]Run npm run build
+2025-11-25T14:09:45.5543008Z [36;1mnpm run build[0m
+2025-11-25T14:09:45.5583420Z shell: /usr/bin/bash -e {0}
+2025-11-25T14:09:45.5583671Z env:
+2025-11-25T14:09:45.5583967Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-11-25T14:09:45.5584474Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-11-25T14:09:45.5584849Z ##[endgroup]
+2025-11-25T14:09:45.6738540Z 
+2025-11-25T14:09:45.6739249Z > heroes-villains@0.0.1 build
+2025-11-25T14:09:45.6739673Z > ng build
+2025-11-25T14:09:45.6739835Z 
+2025-11-25T14:09:46.2790427Z [33m❯[39m Building...
+2025-11-25T14:09:56.7626660Z [32m✔[39m Building...
+2025-11-25T14:09:56.7646181Z [1mInitial chunk files[22m  [2m | [22m[1mNames[22m                [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+2025-11-25T14:09:56.7647912Z [32mchunk-M2MVUMD4.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m311.54 kB[39m[2m | [22m               [36m82.68 kB[39m
+2025-11-25T14:09:56.7649658Z [32mchunk-ZCCZPPWU.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m131.31 kB[39m[2m | [22m               [36m28.74 kB[39m
+2025-11-25T14:09:56.7650717Z [32mchunk-FZQDFHAZ.js[39m    [2m | [22m[2m-[22m                    [2m | [22m [36m58.21 kB[39m[2m | [22m               [36m18.85 kB[39m
+2025-11-25T14:09:56.7651859Z [32mstyles-FYCPWVY2.css[39m  [2m | [22m[2mstyles[22m               [2m | [22m [36m46.66 kB[39m[2m | [22m                [36m5.51 kB[39m
+2025-11-25T14:09:56.7652951Z [32mpolyfills-TDCRLYKL.js[39m[2m | [22m[2mpolyfills[22m            [2m | [22m [36m34.65 kB[39m[2m | [22m               [36m11.33 kB[39m
+2025-11-25T14:09:56.7654338Z [32mchunk-IGVXFY24.js[39m    [2m | [22m[2m-[22m                    [2m | [22m [36m10.25 kB[39m[2m | [22m                [36m2.65 kB[39m
+2025-11-25T14:09:56.7655653Z [32mchunk-BANGDX2W.js[39m    [2m | [22m[2m-[22m                    [2m | [22m  [36m9.52 kB[39m[2m | [22m                [36m3.56 kB[39m
+2025-11-25T14:09:56.7656961Z [32mchunk-UX4CHBK3.js[39m    [2m | [22m[2m-[22m                    [2m | [22m  [36m8.13 kB[39m[2m | [22m                [36m2.88 kB[39m
+2025-11-25T14:09:56.7658713Z [32mchunk-M2X7KQLB.js[39m    [2m | [22m[2m-[22m                    [2m | [22m  [36m5.80 kB[39m[2m | [22m                [36m2.14 kB[39m
+2025-11-25T14:09:56.7660593Z [32mmain-6UUQ4GOY.js[39m     [2m | [22m[2mmain[22m                 [2m | [22m  [36m1.33 kB[39m[2m | [22m              [36m621 bytes[39m
+2025-11-25T14:09:56.7662095Z [32mchunk-OZYWYLNK.js[39m    [2m | [22m[2m-[22m                    [2m | [22m  [36m1.32 kB[39m[2m | [22m              [36m588 bytes[39m
+2025-11-25T14:09:56.7663526Z [32mchunk-JGOFQR76.js[39m    [2m | [22m[2m-[22m                    [2m | [22m  [36m1.19 kB[39m[2m | [22m              [36m521 bytes[39m
+2025-11-25T14:09:56.7665043Z [32mchunk-XTVTS2NW.js[39m    [2m | [22m[2m-[22m                    [2m | [22m  [36m1.13 kB[39m[2m | [22m              [36m501 bytes[39m
+2025-11-25T14:09:56.7666493Z [32mchunk-DVVH2KKN.js[39m    [2m | [22m[2m-[22m                    [2m | [22m  [36m1.02 kB[39m[2m | [22m                [36m1.02 kB[39m
+2025-11-25T14:09:56.7668155Z [32mchunk-CLDSZD2A.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m973 bytes[39m[2m | [22m              [36m973 bytes[39m
+2025-11-25T14:09:56.7669619Z [32mchunk-5TIAO6TV.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m936 bytes[39m[2m | [22m              [36m936 bytes[39m
+2025-11-25T14:09:56.7671062Z [32mchunk-JHI3MBHO.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m928 bytes[39m[2m | [22m              [36m928 bytes[39m
+2025-11-25T14:09:56.7672633Z [32mchunk-IULK653U.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m863 bytes[39m[2m | [22m              [36m863 bytes[39m
+2025-11-25T14:09:56.7674506Z [32mchunk-NV3QH4JK.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m545 bytes[39m[2m | [22m              [36m545 bytes[39m
+2025-11-25T14:09:56.7675940Z [32mchunk-JVOHBMMB.js[39m    [2m | [22m[2m-[22m                    [2m | [22m[36m149 bytes[39m[2m | [22m              [36m149 bytes[39m
+2025-11-25T14:09:56.7677391Z [32mchunk-42C7ZIID.js[39m    [2m | [22m[2m-[22m                    [2m | [22m [36m99 bytes[39m[2m | [22m               [36m99 bytes[39m
+2025-11-25T14:09:56.7678112Z 
+2025-11-25T14:09:56.7678951Z [1m [22m                    [2m | [22m[1mInitial total[22m        [2m | [22m[1m626.56 kB[22m[2m | [22m              [1m166.10 kB[22m
+2025-11-25T14:09:56.7679490Z 
+2025-11-25T14:09:56.7680395Z [1mLazy chunk files[22m     [2m | [22m[1mNames[22m                [2m | [22m [1mRaw size[22m[2m | [22m[1mEstimated transfer size[22m
+2025-11-25T14:09:56.7681871Z [32mchunk-2PM3IMS4.js[39m    [2m | [22m[2m-[22m                    [2m | [22m [36m90.03 kB[39m[2m | [22m               [36m12.47 kB[39m
+2025-11-25T14:09:56.7683773Z [32mchunk-RJWIBRJ3.js[39m    [2m | [22m[2mion-datetime_3-entry[22m [2m | [22m [36m73.91 kB[39m[2m | [22m               [36m14.31 kB[39m
+2025-11-25T14:09:56.7685469Z [32mchunk-6QDNPYNG.js[39m    [2m | [22m[2mion-item_8-entry[22m     [2m | [22m [36m55.09 kB[39m[2m | [22m                [36m7.17 kB[39m
+2025-11-25T14:09:56.7687099Z [32mchunk-4ANCICMI.js[39m    [2m | [22m[2mion-textarea-entry[22m   [2m | [22m [36m47.21 kB[39m[2m | [22m                [36m5.73 kB[39m
+2025-11-25T14:09:56.7688846Z [32mchunk-24437W6R.js[39m    [2m | [22m[2m-[22m                    [2m | [22m [36m45.60 kB[39m[2m | [22m               [36m14.88 kB[39m
+2025-11-25T14:09:56.7690416Z [32mchunk-6IWFXZWF.js[39m    [2m | [22m[2mion-select_3-entry[22m   [2m | [22m [36m43.18 kB[39m[2m | [22m                [36m7.32 kB[39m
+2025-11-25T14:09:56.7692165Z [32mchunk-2CNBK6OC.js[39m    [2m | [22m[2mion-app_8-entry[22m      [2m | [22m [36m41.41 kB[39m[2m | [22m                [36m9.21 kB[39m
+2025-11-25T14:09:56.7693811Z [32mchunk-BUEL7RTS.js[39m    [2m | [22m[2mion-input-entry[22m      [2m | [22m [36m41.13 kB[39m[2m | [22m                [36m5.71 kB[39m
+2025-11-25T14:09:56.7695469Z [32mchunk-6UE7AJ3I.js[39m    [2m | [22m[2mion-modal-entry[22m      [2m | [22m [36m36.07 kB[39m[2m | [22m                [36m8.49 kB[39m
+2025-11-25T14:09:56.7697071Z [32mchunk-BCD7VBR5.js[39m    [2m | [22m[2mion-alert-entry[22m      [2m | [22m [36m35.32 kB[39m[2m | [22m                [36m6.34 kB[39m
+2025-11-25T14:09:56.7698939Z [32mchunk-HYYZFL5G.js[39m    [2m | [22m[2mion-segment_2-entry[22m  [2m | [22m [36m29.33 kB[39m[2m | [22m                [36m5.54 kB[39m
+2025-11-25T14:09:56.7700630Z [32mchunk-IDIE3ISH.js[39m    [2m | [22m[2mion-range-entry[22m      [2m | [22m [36m28.83 kB[39m[2m | [22m                [36m5.56 kB[39m
+2025-11-25T14:09:56.7702280Z [32mchunk-7KZGE4EX.js[39m    [2m | [22m[2mion-button_2-entry[22m   [2m | [22m [36m27.85 kB[39m[2m | [22m                [36m5.52 kB[39m
+2025-11-25T14:09:56.7703948Z [32mchunk-J7SO3OBS.js[39m    [2m | [22m[2mion-refresher_2-entry[22m[2m | [22m [36m25.12 kB[39m[2m | [22m                [36m5.21 kB[39m
+2025-11-25T14:09:56.7705585Z [32mchunk-W5RIW4ZA.js[39m    [2m | [22m[2mion-menu_3-entry[22m     [2m | [22m [36m23.86 kB[39m[2m | [22m                [36m5.06 kB[39m
+2025-11-25T14:09:56.7706833Z [2m...and 101 more lazy chunks files. Use "--verbose" to show all the files.[22m
+2025-11-25T14:09:56.7707325Z 
+2025-11-25T14:09:56.7708080Z Application bundle generation complete. [10.483 seconds] - 2025-11-25T14:09:56.762Z
+2025-11-25T14:09:56.7708644Z 
+2025-11-25T14:09:56.7709872Z [1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThe glob pattern import("./**/*.entry.js*") did not match any files[0m [empty-glob]
+2025-11-25T14:09:56.7710983Z 
+2025-11-25T14:09:56.7711389Z     node_modules/@stencil/core/internal/client/index.js:169:2:
+2025-11-25T14:09:56.7712626Z [37m      169 │   [32m`./${bundleId}.entry.js${BUILD5.hotModuleReplacement && hmrVers[37m...
+2025-11-25T14:09:56.7713599Z           ╵   [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+2025-11-25T14:09:56.7713975Z 
+2025-11-25T14:09:56.7714141Z [39m[22m
+2025-11-25T14:09:56.7728682Z Output location: /home/runner/work/Heroes-Villians/Heroes-Villians/www
+2025-11-25T14:09:56.7731358Z 

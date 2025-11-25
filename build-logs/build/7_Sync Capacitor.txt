@@ -1,0 +1,15 @@
+﻿2025-11-25T14:09:56.8756255Z ##[group]Run npx cap sync android
+2025-11-25T14:09:56.8756793Z [36;1mnpx cap sync android[0m
+2025-11-25T14:09:56.8803477Z shell: /usr/bin/bash -e {0}
+2025-11-25T14:09:56.8803844Z env:
+2025-11-25T14:09:56.8804295Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-11-25T14:09:56.8805039Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-11-25T14:09:56.8805624Z ##[endgroup]
+2025-11-25T14:09:57.6829262Z ✔ Copying web assets from www to android/app/src/main/assets/public in 20.10ms
+2025-11-25T14:09:57.6842890Z ✔ Creating capacitor.config.json in android/app/src/main/assets in 989.61μs
+2025-11-25T14:09:57.6928519Z ✔ copy android in 43.08ms
+2025-11-25T14:09:57.7123954Z ✔ Updating Android plugins in 5.98ms
+2025-11-25T14:09:57.7145307Z [info] Found 1 Capacitor plugin for android:
+2025-11-25T14:09:57.7146028Z        @capacitor/preferences@7.0.2
+2025-11-25T14:09:57.7447369Z ✔ update android in 44.40ms
+2025-11-25T14:09:57.7520572Z [info] Sync finished in 0.12s

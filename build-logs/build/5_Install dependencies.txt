@@ -1,0 +1,17 @@
+﻿2025-11-25T14:09:28.9802725Z ##[group]Run npm ci
+2025-11-25T14:09:28.9803108Z [36;1mnpm ci[0m
+2025-11-25T14:09:28.9845961Z shell: /usr/bin/bash -e {0}
+2025-11-25T14:09:28.9846265Z env:
+2025-11-25T14:09:28.9846599Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-11-25T14:09:28.9847138Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.9-10/x64
+2025-11-25T14:09:28.9847780Z ##[endgroup]
+2025-11-25T14:09:33.7644037Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-11-25T14:09:34.8980462Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-11-25T14:09:35.0855701Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-11-25T14:09:45.5055894Z 
+2025-11-25T14:09:45.5056781Z added 1232 packages, and audited 1233 packages in 16s
+2025-11-25T14:09:45.5057399Z 
+2025-11-25T14:09:45.5058049Z 258 packages are looking for funding
+2025-11-25T14:09:45.5060222Z   run `npm fund` for details
+2025-11-25T14:09:45.5080845Z 
+2025-11-25T14:09:45.5081942Z found 0 vulnerabilities

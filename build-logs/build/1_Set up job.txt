@@ -1,0 +1,32 @@
+﻿2025-11-25T14:09:23.7403933Z Current runner version: '2.329.0'
+2025-11-25T14:09:23.7431235Z ##[group]Runner Image Provisioner
+2025-11-25T14:09:23.7432095Z Hosted Compute Agent
+2025-11-25T14:09:23.7432716Z Version: 20251016.436
+2025-11-25T14:09:23.7433287Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-25T14:09:23.7433982Z Build Date: 2025-10-15T20:44:12Z
+2025-11-25T14:09:23.7434514Z ##[endgroup]
+2025-11-25T14:09:23.7435104Z ##[group]Operating System
+2025-11-25T14:09:23.7435687Z Ubuntu
+2025-11-25T14:09:23.7436113Z 24.04.3
+2025-11-25T14:09:23.7436646Z LTS
+2025-11-25T14:09:23.7437057Z ##[endgroup]
+2025-11-25T14:09:23.7437871Z ##[group]Runner Image
+2025-11-25T14:09:23.7438559Z Image: ubuntu-24.04
+2025-11-25T14:09:23.7439101Z Version: 20251112.124.1
+2025-11-25T14:09:23.7440078Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-25T14:09:23.7441475Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+2025-11-25T14:09:23.7442591Z ##[endgroup]
+2025-11-25T14:09:23.7443723Z ##[group]GITHUB_TOKEN Permissions
+2025-11-25T14:09:23.7445830Z Contents: read
+2025-11-25T14:09:23.7446467Z Metadata: read
+2025-11-25T14:09:23.7446923Z Packages: read
+2025-11-25T14:09:23.7447412Z ##[endgroup]
+2025-11-25T14:09:23.7449869Z Secret source: Actions
+2025-11-25T14:09:23.7450601Z Prepare workflow directory
+2025-11-25T14:09:23.7779945Z Prepare all required actions
+2025-11-25T14:09:23.7818150Z Getting action download info
+2025-11-25T14:09:24.2831864Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-11-25T14:09:24.8493988Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-11-25T14:09:24.9406106Z Download action repository 'actions/setup-java@v4' (SHA:c5195efecf7bdfc987ee8bae7a71cb8b11521c00)
+2025-11-25T14:09:25.5730703Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-11-25T14:09:25.7993626Z Complete job name: build

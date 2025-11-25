@@ -1,0 +1,71 @@
+﻿2025-11-25T14:09:25.8805013Z ##[group]Run actions/checkout@v4
+2025-11-25T14:09:25.8806391Z with:
+2025-11-25T14:09:25.8807207Z   repository: GamaYuto/Heroes-Villians
+2025-11-25T14:09:25.8808750Z   token: ***
+2025-11-25T14:09:25.8809547Z   ssh-strict: true
+2025-11-25T14:09:25.8810341Z   ssh-user: git
+2025-11-25T14:09:25.8811167Z   persist-credentials: true
+2025-11-25T14:09:25.8812088Z   clean: true
+2025-11-25T14:09:25.8812907Z   sparse-checkout-cone-mode: true
+2025-11-25T14:09:25.8813843Z   fetch-depth: 1
+2025-11-25T14:09:25.8814586Z   fetch-tags: false
+2025-11-25T14:09:25.8815347Z   show-progress: true
+2025-11-25T14:09:25.8816123Z   lfs: false
+2025-11-25T14:09:25.8816856Z   submodules: false
+2025-11-25T14:09:25.8817813Z   set-safe-directory: true
+2025-11-25T14:09:25.8819096Z ##[endgroup]
+2025-11-25T14:09:25.9968445Z Syncing repository: GamaYuto/Heroes-Villians
+2025-11-25T14:09:25.9971205Z ##[group]Getting Git version info
+2025-11-25T14:09:25.9972650Z Working directory is '/home/runner/work/Heroes-Villians/Heroes-Villians'
+2025-11-25T14:09:25.9974647Z [command]/usr/bin/git version
+2025-11-25T14:09:26.0027739Z git version 2.51.2
+2025-11-25T14:09:26.0055841Z ##[endgroup]
+2025-11-25T14:09:26.0070925Z Temporarily overriding HOME='/home/runner/work/_temp/5594fed6-c444-4ae7-a131-880fccbdf77a' before making global git config changes
+2025-11-25T14:09:26.0073659Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-25T14:09:26.0085123Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Heroes-Villians/Heroes-Villians
+2025-11-25T14:09:26.0123838Z Deleting the contents of '/home/runner/work/Heroes-Villians/Heroes-Villians'
+2025-11-25T14:09:26.0127483Z ##[group]Initializing the repository
+2025-11-25T14:09:26.0132276Z [command]/usr/bin/git init /home/runner/work/Heroes-Villians/Heroes-Villians
+2025-11-25T14:09:26.0228439Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-11-25T14:09:26.0230388Z hint: is subject to change. To configure the initial branch name to use in all
+2025-11-25T14:09:26.0233105Z hint: of your new repositories, which will suppress this warning, call:
+2025-11-25T14:09:26.0234442Z hint:
+2025-11-25T14:09:26.0235328Z hint: 	git config --global init.defaultBranch <name>
+2025-11-25T14:09:26.0236688Z hint:
+2025-11-25T14:09:26.0238273Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-11-25T14:09:26.0240025Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-11-25T14:09:26.0241384Z hint:
+2025-11-25T14:09:26.0242079Z hint: 	git branch -m <name>
+2025-11-25T14:09:26.0243238Z hint:
+2025-11-25T14:09:26.0244401Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-11-25T14:09:26.0246485Z Initialized empty Git repository in /home/runner/work/Heroes-Villians/Heroes-Villians/.git/
+2025-11-25T14:09:26.0249771Z [command]/usr/bin/git remote add origin https://github.com/GamaYuto/Heroes-Villians
+2025-11-25T14:09:26.0280858Z ##[endgroup]
+2025-11-25T14:09:26.0282191Z ##[group]Disabling automatic garbage collection
+2025-11-25T14:09:26.0284447Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-25T14:09:26.0314622Z ##[endgroup]
+2025-11-25T14:09:26.0315861Z ##[group]Setting up auth
+2025-11-25T14:09:26.0321767Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-25T14:09:26.0353621Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-25T14:09:26.0691693Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-25T14:09:26.0727300Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-25T14:09:26.0955824Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-25T14:09:26.0989247Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-25T14:09:26.1228360Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-25T14:09:26.1264093Z ##[endgroup]
+2025-11-25T14:09:26.1272440Z ##[group]Fetching the repository
+2025-11-25T14:09:26.1276893Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +56db4bd4b23b6f63eea98e39d5b87fcd3566a476:refs/remotes/origin/main
+2025-11-25T14:09:26.5602916Z From https://github.com/GamaYuto/Heroes-Villians
+2025-11-25T14:09:26.5604088Z  * [new ref]         56db4bd4b23b6f63eea98e39d5b87fcd3566a476 -> origin/main
+2025-11-25T14:09:26.5634133Z ##[endgroup]
+2025-11-25T14:09:26.5635215Z ##[group]Determining the checkout info
+2025-11-25T14:09:26.5637446Z ##[endgroup]
+2025-11-25T14:09:26.5643852Z [command]/usr/bin/git sparse-checkout disable
+2025-11-25T14:09:26.5685406Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-11-25T14:09:26.5710873Z ##[group]Checking out the ref
+2025-11-25T14:09:26.5714623Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-25T14:09:26.5860324Z Switched to a new branch 'main'
+2025-11-25T14:09:26.5861207Z branch 'main' set up to track 'origin/main'.
+2025-11-25T14:09:26.5868899Z ##[endgroup]
+2025-11-25T14:09:26.5908685Z [command]/usr/bin/git log -1 --format=%H
+2025-11-25T14:09:26.5931991Z 56db4bd4b23b6f63eea98e39d5b87fcd3566a476
