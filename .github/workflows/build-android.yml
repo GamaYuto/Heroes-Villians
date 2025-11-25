@@ -1,47 +1,54 @@
 name: Build Android APK
 
 on:
-  workflow_dispatch: # Permite ejecutarlo manualmente
+  workflow_dispatch:
   push:
     branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-    
-    - name: Setup Java
+
+    # 🔥 Java 17 forzado y limpio
+    - name: Setup Java 17
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
         java-version: '17'
-    
+        overwrite-settings: true
+        check-latest: true
+
+    - name: Verify Java version
+      run: java -version
+
     - name: Install dependencies
       run: npm ci
-    
+
     - name: Build web assets
       run: npm run build
-    
-    - name: Copy assets to Android
+
+    # 🔥 Obligatorio: copiar los assets de dist/ → android/public
+    - name: Copy Capacitor Web Assets
       run: npx cap copy android
-    
+
     - name: Sync Capacitor
       run: npx cap sync android
-    
+
     - name: Build APK
       run: |
         cd android
         chmod +x gradlew
         ./gradlew assembleDebug
-    
+
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
