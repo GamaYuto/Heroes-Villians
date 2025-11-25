@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/explore"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ character?.name || 'Personaje' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="loading" class="loader"><ion-spinner></ion-spinner></div>
+
+  <ng-container *ngIf="!loading && character as c">
+    <ion-img [src]="c.image" alt="{{ c.name }}" loading="lazy"></ion-img>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ c.name }}</ion-card-title>
+        <ion-card-subtitle>{{ (c.aliases || [])[0] }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="head-row">
+          <div class="chips">
+            <ion-chip color="primary" size="small">{{ c.universe }}</ion-chip>
+            <ion-chip [color]="c.affiliation === 'Hero' ? 'success' : c.affiliation === 'Villain' ? 'danger' : 'medium'" size="small">{{ c.affiliation }}</ion-chip>
+          </div>
+          <app-rating-badge [rating]="c.rating"></app-rating-badge>
+        </div>
+
+        <div class="actions">
+          <ion-button fill="solid" [color]="isFav ? 'danger' : 'medium'" (click)="toggleFav()">
+            <ion-icon slot="start" [name]="isFav ? 'heart' : 'heart-outline'"></ion-icon>
+            {{ isFav ? 'Quitar de favoritos' : 'Agregar a favoritos' }}
+          </ion-button>
+          <ion-button fill="outline" color="primary" (click)="share()">
+            <ion-icon slot="start" name="share-social"></ion-icon>
+            Compartir
+          </ion-button>
+          <ion-button fill="clear" [href]="c.links?.['wiki']" target="_blank">Ver wiki</ion-button>
+        </div>
+
+        <ion-list lines="none" class="facts">
+          <ion-item>
+            <ion-label>
+              <h3>Biografía</h3>
+              <p>Breve biografía no disponible en mock.</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Poderes</h3>
+              <p>{{ (c.powers || []).join(', ') }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Debilidades</h3>
+              <p>{{ (c.weaknesses || []).join(', ') }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h3>Primera aparición</h3>
+              <p>{{ c.firstAppearance }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <div class="stats">
+          <ion-chip *ngFor="let k of (c.powerStats | keyvalue)">
+            {{ k.key }}: {{ k.value }}
+          </ion-chip>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <div *ngIf="!loading && !character" class="empty">
+    <ion-item>
+      <ion-label>No se encontró el personaje.</ion-label>
+    </ion-item>
+  </div>
+</ion-content>

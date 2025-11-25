@@ -1,0 +1,39 @@
+/* Detail page improved layout */
+ion-img {
+	display: block;
+	width: 100%;
+	height: 260px;
+	object-fit: cover;
+}
+
+.head-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 8px;
+}
+
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.actions {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	margin: 8px 0 12px;
+}
+
+.facts h3 {
+	margin: 0;
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+
+.facts p { margin: 4px 0 0; color: var(--ion-color-medium-shade); }
+
+.stats {
+	margin-top: 0.5rem;
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}

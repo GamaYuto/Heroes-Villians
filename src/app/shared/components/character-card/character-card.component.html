@@ -1,0 +1,58 @@
+<ion-card>
+  <ion-img [src]="imgSrc" alt="{{ character.name }}" loading="lazy" (ionError)="onImgError()"></ion-img>
+  
+  <ion-card-header>
+    <ion-card-title>{{ character.name }}</ion-card-title>
+    <ion-card-subtitle>{{ (character.aliases || [])[0] }}</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="info-section">
+      <div class="badges-rating-row">
+        <div class="badges">
+          <ion-chip color="primary" size="small">
+            <ion-icon name="planet"></ion-icon>
+            <ion-label>{{ character.universe }}</ion-label>
+          </ion-chip>
+          <ion-chip [color]="character.affiliation === 'Hero' ? 'success' : character.affiliation === 'Villain' ? 'danger' : 'medium'" size="small">
+            <ion-icon [name]="character.affiliation === 'Hero' ? 'shield-checkmark' : character.affiliation === 'Villain' ? 'skull' : 'help-circle'"></ion-icon>
+            <ion-label>{{ character.affiliation }}</ion-label>
+          </ion-chip>
+        </div>
+        <app-rating-badge [rating]="character.rating"></app-rating-badge>
+      </div>
+
+      <div class="powers-section">
+        <ion-label class="powers-label">Poderes:</ion-label>
+        <p class="powers-text">{{ (character.powers || []).slice(0,2).join(', ') }}</p>
+      </div>
+
+      <div class="year-section">
+        <ion-text color="medium" class="year-text">Desde {{ character.firstAppearance }}</ion-text>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <ion-button 
+        expand="block" 
+        fill="clear" 
+        size="large"
+        (click)="toggleFavorite($event)" 
+        [color]="isFav ? 'danger' : 'medium'"
+        aria-label="Toggle favorito">
+        <ion-icon slot="start" [name]="isFav ? 'heart' : 'heart-outline'"></ion-icon>
+        {{ isFav ? 'Favorito' : 'Agregar' }}
+      </ion-button>
+      <ion-button 
+        expand="block" 
+        fill="solid" 
+        size="large"
+        color="primary"
+        [routerLink]="['/character', character.id]" 
+        aria-label="Ver detalle">
+        <ion-icon slot="start" name="information-circle"></ion-icon>
+        Ver detalle
+      </ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>

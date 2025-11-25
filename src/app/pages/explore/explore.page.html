@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Explorar</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Buscar héroes o alias" (ionChange)="onSearch($event)" [value]="q"></ion-searchbar>
+    <ion-toolbar>
+      <ion-segment [value]="affiliation ?? ''" (ionChange)="onSegmentChange($event)">
+        <ion-segment-button value="">
+          <ion-label>Todos</ion-label>
+        </ion-segment-button>
+        <ion-segment-button *ngFor="let a of affiliations" [value]="a">
+          <ion-label>{{ a }}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <ion-item lines="none">
+        <ion-label>Universo</ion-label>
+        <ion-select (ionChange)="setUniverse($event)" [value]="universe ?? ''">
+          <ion-select-option value="">Todos</ion-select-option>
+          <ion-select-option *ngFor="let u of universes" [value]="u">{{ u }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Orden</ion-label>
+        <ion-select (ionChange)="setSort($event)" [value]="sort ?? ''">
+          <ion-select-option value="">Por defecto</ion-select-option>
+          <ion-select-option value="name_asc">Nombre A→Z</ion-select-option>
+          <ion-select-option value="name_desc">Nombre Z→A</ion-select-option>
+          <ion-select-option value="rating_desc">Rating ↓</ion-select-option>
+          <ion-select-option value="rating_asc">Rating ↑</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Desliza para refrescar" refreshingSpinner="crescent"></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="loading" class="loader">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <div *ngIf="!loading">
+    <ion-list *ngIf="characters.length; else emptyTpl">
+      <ng-container *ngFor="let c of characters">
+        <app-character-card [character]="c"></app-character-card>
+      </ng-container>
+
+      <!-- Skeletons while loading more -->
+      <ng-container *ngIf="loadingMore">
+        <ion-card *ngFor="let s of [1,2,3,4]">
+          <ion-skeleton-text animated style="width: 100%; height: 200px;"></ion-skeleton-text>
+          <ion-card-header>
+            <ion-skeleton-text animated style="width: 60%; height: 18px;"></ion-skeleton-text>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-skeleton-text animated style="width: 90%; height: 14px;"></ion-skeleton-text>
+          </ion-card-content>
+        </ion-card>
+      </ng-container>
+    </ion-list>
+    <ng-template #emptyTpl>
+      <app-empty-state title="Sin resultados" message="No se encontraron personajes que coincidan."></app-empty-state>
+    </ng-template>
+    <div class="count">Mostrando {{ characters.length }} de {{ total }}</div>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)" [disabled]="!canLoadMore">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

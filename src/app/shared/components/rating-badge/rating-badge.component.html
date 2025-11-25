@@ -1,0 +1,4 @@
+<div class="rating-badge">
+  <ion-icon *ngFor="let s of stars" [name]="s ? 'star' : 'star-outline'" size="small"></ion-icon>
+  <span class="num">{{ rating | number:'1.1-1' }}</span>
+</div>

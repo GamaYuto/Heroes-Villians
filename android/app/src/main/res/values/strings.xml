@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Heroes y Villanos</string>
+    <string name="title_activity_main">Heroes y Villanos</string>
+    <string name="package_name">com.heroesvillanos.app</string>
+    <string name="custom_url_scheme">com.heroesvillanos.app</string>
+</resources>

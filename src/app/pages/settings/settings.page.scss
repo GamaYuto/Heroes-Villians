@@ -1,0 +1,62 @@
+ion-list {
+  background: transparent;
+}
+
+ion-list-header {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.875rem;
+}
+
+ion-item {
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  margin-bottom: 4px;
+  
+  ion-label {
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    h2 {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: var(--ion-color-medium);
+    }
+  }
+
+  ion-icon {
+    font-size: 24px;
+    margin-right: 12px;
+  }
+}
+
+.settings-footer {
+  margin-top: 32px;
+  
+  p {
+    font-size: 0.875rem;
+    margin: 0;
+  }
+}
+
+// Estilos para texto grande
+:host-context(body.large-text) {
+  ion-item ion-label h2 {
+    font-size: 1.125rem;
+  }
+
+  ion-item ion-label p {
+    font-size: 1rem;
+  }
+
+  .settings-footer p {
+    font-size: 1rem;
+  }
+}

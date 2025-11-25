@@ -1,0 +1,222 @@
+Parcial Final – Desarrollo de Aplicaciones Móviles
+Producto: App “Héroes & Villanos” Stack obligatorio: Ionic 7 + Angular 17/18, TypeScript, Capacitor Entrega: Código + APK (debug o release) + Documentación técnica y de usuario Duración sugerida: 3 semanas 
+________________________________________
+1) Objetivo
+Construir una aplicación móvil híbrida con Ionic + Angular que permita buscar, explorar y visualizar información de héroes y villanos, con soporte offline, favoritos, filtros, y detalles enriquecidos. El proyecto debe estar documentado y cumplir criterios de calidad, accesibilidad y rendimiento.
+________________________________________
+2) Reglas generales
+•	El desarrollo debe ser original (ver sección Antiplagio) y seguir buenas prácticas de Angular/Ionic.
+•	Se puede usar API pública, mock local o servidor propio (json-server/Node). Debe documentarse la elección.
+•	Debe compilar en Android (capacitor-android).
+•	Usar Git con commits atómicos y mensajes claros.
+•	El código debe ser tipado (sin any innecesarios) y linted.
+________________________________________
+3) Requisitos funcionales (Obligatorios)
+1.	Home / Descubrimiento
+o	Lista paginada o con infinite scroll de personajes (héroes y villanos).
+o	Tarjetas con imagen, nombre, afiliación (Héroe/Villano/Neutral), universo (p. ej., Marvel/DC/Original), y etiquetas.
+o	Estado de carga, vacíos y errores manejados visualmente.
+2.	Búsqueda
+o	Barra de búsqueda.
+o	Búsqueda por nombre (contiene) y por alias.
+3.	Filtros y ordenamiento
+o	Filtros por universo, afiliación, poder principal.
+o	Ordenar por nombre (A→Z/Z→A) y por rating de poder.
+4.	Detalle del personaje
+o	Imagen en alta, biografía corta, poderes (lista), debilidades, primera aparición, universo.
+o	Métricas: fuerza, velocidad, inteligencia (gráficas simples o badges).
+o	Acciones: Agregar/Quitar favoritos, Compartir (share sheet), abrir enlace externo (si existe).
+5.	Favoritos
+o	Pestaña de favoritos con persistencia local (Storage/IndexedDB).
+o	Sincronización con detalle y tarjetas.
+6.	Navegación y Rutas
+o	Tabs o menú inferior: Explorar, Favoritos, Ajustes.
+o	Rutas con parámetros (p. ej. /character/:id).
+7.	Ajustes
+o	Tema claro/oscuro.
+o	Preferencias: tamaño de fuente (normal/grande), idioma (es/en). OPCIONAL
+8.	Accesibilidad
+o	Roles/labels para lectores de pantalla.
+o	Contraste adecuado, tamaños de toque ≥ 44px.
+9.	Rendimiento
+o	Lazy loading de módulos/páginas.
+o	Imágenes optimizadas con ion-img, loading="lazy".
+________________________________________
+4) Requisitos opcionales (puntos extra)
+•	PWA funcional (service worker, add to home).
+•	Animaciones suaves (Ionic Animations/Angular Animations) al navegar y en tarjetas.
+•	NgRx o Signals Store para estado global.
+•	Internacionalización (i18n) completa (es/en) con @ngx-translate o i18n Angular.
+•	Deep links (Capacitor) para abrir directo un personaje.
+•	Notificaciones locales (recordatorio de revisar nuevos personajes).
+________________________________________
+5) Datos / API
+Opción A: Mock local
+Incluya un JSON en src/assets/data/characters.json con estructura similar:
+[
+  {
+    "id": "batman",
+    "name": "Batman",
+    "aliases": ["Bruce Wayne", "The Dark Knight"],
+    "universe": "DC",
+    "affiliation": "Hero",
+    "powerStats": {"intelligence": 95, "strength": 30, "speed": 30},
+    "powers": ["Detective skills", "Martial arts"],
+    "weaknesses": ["Human limits"],
+    "firstAppearance": 1939,
+    "rating": 4.7,
+    "image": "assets/img/batman.jpg",
+    "links": {"wiki": "https://..."}
+  }
+]
+Opción B: API pública
+•	Documente la API (endpoints, límites, auth).
+•	Implemente caching y manejo de errores (429, 5xx).
+Opción C: Backend propio
+•	Servir /characters, /characters/:id, ?q=, ?universe=, ?affiliation= con paginación (page, limit).
+________________________________________
+6) Arquitectura sugerida
+src/
+ ├─ app/
+ │   ├─ core/
+ │   │   ├─ services/ (api.service.ts, characters.service.ts) 
+ │   │   └─ utils/
+ │   ├─ shared/
+ │   │   ├─ components/ (character-card, rating-badge, empty-state)
+ │   │   └─ pipes/ (highlight.pipe.ts, truncate.pipe.ts)
+ │   ├─ pages/
+ │   │   ├─ explore/ (list + search + filters)
+ │   │   ├─ detail/ (character/:id)
+ │   │   ├─ favorites/
+ │   │   └─ settings/
+ │   └─ state/ (opcional: signals store o NgRx)
+ └─ assets/
+     ├─ data/
+     └─ img/
+•	characters.service.ts: CRUD, búsqueda, filtros, cache.
+•	Interceptores: logging, cache (Map/IndexedDB), retry exponencial.
+•	Storage (Capacitor Preferences/Storage) para favoritos & settings.
+________________________________________
+7) Historias de usuario (MVP)
+1.	Como usuario, quiero buscar un personaje por nombre o alias para encontrarlo rápido.
+o	Criterio: búsqueda con debounce 300–500ms; muestra resultados y conteo.
+2.	Como usuario, quiero filtrar por universo y afiliación para acotar la lista.
+o	Criterio: filtros combinables; pill con conteo.
+3.	Como usuario, quiero ver detalles con estadísticas y poderes.
+4.	Como usuario, quiero guardar en favoritos y verlos offline.
+5.	Como usuario, quiero que la app funcione sin conexión para revisar mis favoritos y el último listado cacheado.
+________________________________________
+8) Requisitos de UI/UX
+•	Ionic components: ion-header, ion-toolbar, ion-content, ion-searchbar, ion-segment, ion-card, ion-list, ion-item, ion-tab-bar.
+•	Feedback: skeleton loaders, toasts para errores/acciones, pull-to-refresh.
+•	Estados: empty-state claro (icono + mensaje + acción), error-state con reintentar.
+________________________________________
+9) Calidad de código
+•	ESLint + Prettier configurados.
+•	Arquitectura modular y lazy-loaded.
+•	Nombres semánticos, tipados estrictos, strictTemplates en tsconfig.
+________________________________________
+10) Pruebas
+•	Unitarias: al menos 6 specs relevantes (servicio de personajes, pipe de highlight, componente de tarjeta, reducer/store si aplica).
+•	E2E (opcional-bonus): flujo buscar→detalle→favorito con Playwright.
+•	Medición: reporte de cobertura (umbral sugerido 60%+ para lógica de negocio).
+________________________________________
+11) Seguridad & Privacidad
+•	Sanitizar HTML/URLs externas.
+•	Manejo de errores sin filtrar datos sensibles.
+•	Si hay auth/API-keys, usar variables de entorno y no commitear secretos.
+________________________________________
+12) Rendimiento
+•	ion-scroll o paginación.
+•	Evitar consultas redundantes con cache/memoización.
+•	Imágenes: tamaños apropiados y lazy.
+________________________________________
+13) Accesibilidad (A11y)
+•	aria-label en iconos/acciones.
+•	Navegación por teclado (en PWA) y foco visible.
+•	Contraste AA mínimo.
+________________________________________
+14) Documentación requerida
+1.	README.md (breve):
+o	Descripción, features, arquitectura, requisitos, instalación, scripts, build, cómo probar, decisiones técnicas.
+2.	DOCS/ (carpeta):
+o	Arquitectura: diagrama simple, responsabilidades por capa.
+o	API: endpoints o estructura del JSON mock, paginación y filtros.
+o	Manual de usuario: con capturas (instalación APK, uso de la app, favoritos, offline, ajustes).
+o	Pruebas: qué y cómo se probó, cobertura, casos E2E (si aplica).
+o	Métricas: tiempos de carga, peso APK aproximado, Lighthouse PWA (si aplica).
+________________________________________
+15) Entregables
+•	Repositorio Git público/privado (enviar acceso):
+o	Código fuente, package.json, ionic.config.json, capacitor.config.ts.
+o	APK en release/ (o enlace) + hash SHA256.
+o	DOCS/ con PDF del manual de usuario.
+•	Video demo (3–5 min): recorrido por features y explicación de decisiones.
+________________________________________
+16) Rúbrica de evaluación (100 pts)
+Criterio	Pts
+Funcionalidades obligatorias completas (secciones 3 y 7)	35
+UX/UI (estados, feedback, consistencia)	10
+Calidad de código (arquitectura, tipado, lint)	15
+Rendimiento (lazy, virtual scroll/paginación, cache)	8
+Accesibilidad básica	5
+Offline básico	7
+Documentación (README + DOCS + manual)	12
+Pruebas unitarias	8
+Bonos (PWA, NgRx, E2E, i18n, notificaciones, deep links)	+10 máx
+Aprobación mínima: 60 pts.
+________________________________________
+17) Antiplagio y ética
+•	Se permite usar librerías y ejemplos citando fuentes.
+•	Prohibido copiar proyectos completos sin atribución. El docente puede solicitar defensa oral y cambios en vivo.
+•	Se revisarán commits y fechas; incoherencias pueden implicar cero.
+________________________________________
+18) Guía de inicio rápido
+# Requisitos previos
+node -v      # v20+
+npm -v
+npm i -g @ionic/cli
+
+# Crear proyecto
+ionic start heroes-villains tabs --type=angular
+cd heroes-villains
+
+# Añadir plataformas
+ionic build
+npx cap add android
+npx cap open android   # abrir en Android Studio
+
+# Ejecutar en dispositivo/emulador
+ionic capacitor run android -l --external
+
+# Librerías sugeridas
+npm i @capacitor/preferences @ngx-translate/core @ngx-translate/http-loader
+Componentes sugeridos
+•	character-card: imagen, nombre, badges, botón favorito.
+•	empty-state: icono, título, acción primaria.
+•	rating-badge: visualización simple (0–5) a partir de powerStats.
+________________________________________
+19) Casos de prueba sugeridos
+•	Búsqueda devuelve resultados parciales por alias.
+•	Filtros combinados (universo + afiliación) producen subconjunto correcto.
+•	Favoritos persiste entre sesiones y en modo offline.
+•	Detalle muestra métricas y enlaces cuando existen.
+•	Service maneja error (simular 500/404) mostrando toast y estado en pantalla.
+________________________________________
+20) Entrega y formato
+•	Subir a Q10: enlace al repo + APK + PDF de DOCS.
+•	Incluir changelog con versión final  y fecha.
+•	Adjuntar tabla de pruebas ejecutadas con resultados.
+________________________________________
+21) Criterios de descarte
+•	No compila en Android → -20 pts.
+•	Sin documentación mínima (README + manual) → -15 pts.
+•	Sin manejo de errores/estados vacíos → -10 pts.
+________________________________________
+22) Recomendaciones
+•	Comenzar por datos/mock para asegurar UI fluida, luego usar API.
+•	Diseñar flujo offline desde el día 1.
+•	Mantener componentes pequeños y reutilizables.
+•	Grabar un demo temprano para validar navegación y feedback.
+________________________________________
+¡Éxitos con el parcial!

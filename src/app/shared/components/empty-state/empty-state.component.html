@@ -1,0 +1,6 @@
+<div class="empty-state">
+  <div class="icon"><ion-icon name="alert-circle"></ion-icon></div>
+  <h3>{{ title }}</h3>
+  <p *ngIf="message">{{ message }}</p>
+  <ion-button *ngIf="actionText" fill="outline">{{ actionText }}</ion-button>
+</div>

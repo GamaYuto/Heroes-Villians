@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title size="small">Personajes guardados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="loading" class="loader"><ion-spinner></ion-spinner></div>
+
+  <div *ngIf="!loading && characters.length">
+    <ion-list>
+      <ng-container *ngFor="let c of characters">
+        <app-character-card [character]="c"></app-character-card>
+      </ng-container>
+    </ion-list>
+  </div>
+
+  <div *ngIf="!loading && !characters.length">
+    <ion-item>
+      <ion-label>No tienes favoritos aún.</ion-label>
+    </ion-item>
+  </div>
+</ion-content>
