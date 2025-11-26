@@ -36,6 +36,27 @@
 @import "@ionic/angular/css/palettes/dark.class.css";
 /* @import '@ionic/angular/css/palettes/dark.system.css'; */
 
+/* Safe Area para dispositivos móviles (notch, islas dinámicas, etc.) */
+ion-header ion-toolbar:first-child {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Fix scroll en Android */
+ion-content {
+  --overflow: auto;
+}
+
+/* Forzar scroll interno en WebView Android */
+ion-content::part(scroll) {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Asegurar que el body no bloquee el scroll */
+body {
+  position: static !important;
+}
+
 /* Estilos para texto grande */
 body.large-text {
   font-size: 18px;

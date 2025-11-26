@@ -5,11 +5,12 @@ const config: CapacitorConfig = {
   appName: 'Heroes y Villanos',
   webDir: 'www',
   server: {
-    androidScheme: 'https',
-    allowNavigation: [
-      'cdn.jsdelivr.net',
-      '*.jsdelivr.net'
-    ]
+    androidScheme: 'http',
+    hostname: 'localhost',
+    allowNavigation: ['*']
+  },
+  android: {
+    allowMixedContent: true
   }
 };
 
