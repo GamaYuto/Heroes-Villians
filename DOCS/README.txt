@@ -5,6 +5,7 @@ Resumen
 - App Ionic + Angular con tabs (Explorar, Favoritos, Ajustes) para listar héroes y villanos.
 - Fuente de datos: Mock local (assets/data/characters.json) o API Akabab (~700 personajes). Cache y modo offline.
 - UX: búsqueda con debounce, filtros, ordenamiento, infinite scroll, skeleton loaders y pull-to-refresh.
+- URL VIDEO SUSTENTACION DE LA APP: https://drive.google.com/file/d/1tzq27pH4Gz_wFs2dX6tkeKnOjnyxntyM/view?usp=sharing
 
 Requisitos
 - Node.js 20+, npm 9+
